@@ -20,7 +20,6 @@ func Compress(text string, id int,  wg *sync.WaitGroup) {
 		fs, ss := heap.Pop(nodeList).(*Tree), heap.Pop(nodeList).(*Tree)
 		heap.Push(nodeList, newTree('$', fs.Frequency+ss.Frequency, fs, ss))
 	}
-
 	
 	table := make(map[rune]string)
 	buildTable(nodeList.Nodes[0], table, "")
@@ -32,9 +31,6 @@ func Compress(text string, id int,  wg *sync.WaitGroup) {
 	for _, char := range text {
 		encodedData += table[char]
 	}
-
 	encodedData += "|" + encodedTree
-	
-
 	writeToFile(encodedData, id)
 }

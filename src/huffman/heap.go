@@ -5,12 +5,10 @@ type NodeList struct {
 	Nodes []*Tree
 }
 
-
 // Len Function
 func (nodeList NodeList) Len() int {
 	return len(nodeList.Nodes)
 }
-
 
 // Less Function
 func (nodeList NodeList) Less(i, j int) bool {
@@ -26,7 +24,6 @@ func (nodeList NodeList) Swap(i, j int) {
 func (nodeList *NodeList) Push(x interface{}) {
 	nodeList.Nodes = append(nodeList.Nodes, x.(*Tree))
 }
-
 
 // Pop Function
 func (nodeList *NodeList) Pop() interface{} {

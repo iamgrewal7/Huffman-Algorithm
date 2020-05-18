@@ -1,6 +1,5 @@
 package huffman
 
-
 // Tree Struct
 type Tree struct {
 	Char      rune
@@ -9,12 +8,12 @@ type Tree struct {
 	RightNode *Tree
 }
 
-
+// Tree Constructor
 func newTree(char rune, frequency int, left, right *Tree) *Tree {
 	return &Tree{char, frequency, left, right}
 }
 
-
+// This functions does a postorder traversal for saving all the paths
 func encodeTree(hmt *Tree, finalTree *string) {
 	if hmt == nil {
 		return
@@ -29,7 +28,8 @@ func encodeTree(hmt *Tree, finalTree *string) {
 	encodeTree(hmt.RightNode, finalTree) 
 }
 
-
+// This function will be used for recreating the string
+// using from the huffman tree that is saved in file along data
 func recoverTree(text string) *Tree{
 	if len(text) == 0 {
 		return nil
