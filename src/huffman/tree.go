@@ -1,6 +1,5 @@
 package huffman
 
-// import "fmt"
 
 // Tree Struct
 type Tree struct {
@@ -16,8 +15,7 @@ func newTree(char rune, frequency int, left, right *Tree) *Tree {
 }
 
 
-// PreOrder function
-func getTree(hmt *Tree, finalTree *string) {
+func encodeTree(hmt *Tree, finalTree *string) {
 	if hmt == nil {
 		return
 	}
@@ -27,8 +25,8 @@ func getTree(hmt *Tree, finalTree *string) {
 	} else {
 		*finalTree += "0"
 	}
-	getTree(hmt.LeftNode, finalTree)
-	getTree(hmt.RightNode, finalTree) 
+	encodeTree(hmt.LeftNode, finalTree)
+	encodeTree(hmt.RightNode, finalTree) 
 }
 
 
@@ -36,7 +34,6 @@ func recoverTree(text string) *Tree{
 	if len(text) == 0 {
 		return nil
 	}
-	//fmt.Println(text)
 
 	if text[0] == '1' {
 		return &Tree{rune(text[1]), -1, nil, nil}

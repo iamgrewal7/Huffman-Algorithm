@@ -26,7 +26,7 @@ func Compress(text string, id int,  wg *sync.WaitGroup) {
 	buildTable(nodeList.Nodes[0], table, "")
 
 	encodedTree := ""
-	getTree(nodeList.Nodes[0], &encodedTree)
+	encodeTree(nodeList.Nodes[0], &encodedTree)
 	
 	encodedData := ""
 	for _, char := range text {
