@@ -18,11 +18,12 @@ func main() {
 	var wg sync.WaitGroup
 	wg.Add(1)
 	huffman.Compress(string(data), 1, &wg)
-	// wg.Add(1)
-	// huffman.Compress(string(data), 2, &wg)
 	wg.Wait()
+
 	t := time.Now()
 	elapsed := t.Sub(start)
+
+	fmt.Printf("Finished in: ")
 	fmt.Println(elapsed)
 	
 }
