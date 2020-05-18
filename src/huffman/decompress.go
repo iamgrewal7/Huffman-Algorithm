@@ -1,4 +1,8 @@
 package huffman
+import "fmt"
 
-
-// WIP
+// Decompress Function
+func Decompress(text string) {
+	root := recoverTree(&text)
+	fmt.Println(root)
+}
