@@ -9,3 +9,7 @@
 - _Original Size_ -> **22k**
 
 - _Size after compression_ -> **4.7k**
+
+---
+
+**WIP** -> _Decompression Algorithm, CLI_
